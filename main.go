@@ -8,6 +8,9 @@ import (
 	"strings"
 )
 
+// Reference for improvements:
+// https://github.com/samuelngs/binary-go/tree/master/binary
+
 func main() {
 	fmt.Println("[singularity] bin2go: Ultra simple binary conversion")
 	fmt.Println("==========================================================================================")
