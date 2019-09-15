@@ -15,8 +15,6 @@ func main() {
 	fmt.Println("or file system, like the popular `go-bindata`.\n")
 
 	args := os.Args
-	fmt.Println("args:", args)
-	fmt.Println("arg count:", len(args))
 	if len(args) < 2 {
 		fmt.Println("[error] failed to provide arguments, try again using the following:\n")
 		fmt.Println("    bin2go [binary path (/usr/bin/ruby)] [filename.go]\n")
@@ -43,7 +41,7 @@ func main() {
 		}
 		defer outputFile.Close()
 
-		basename := filepath.Base(binaryFilename)
+		basename := strings.Split(filepath.Base(binaryFilename), ".")[0]
 		if len(basename) == 0 {
 			fmt.Println("[bin2go] binary name must not be empty `"+basename+"`:", err)
 			os.Exit(1)
